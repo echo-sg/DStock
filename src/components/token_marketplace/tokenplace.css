@@ -1,0 +1,13 @@
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+}
+
+.acc {
+    align-content: flex-start;
+}
+
+.tokens {
+    align-content: flex-end;
+}

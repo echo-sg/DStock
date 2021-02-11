@@ -1,13 +1,12 @@
 import React from 'react';
 import Item from './Item';
-import Itemlist from './Itemlist';
+// import Itemlist from './Itemlist';
 // import "./mainpage.css";
 
-const Mainpage = () => {
+const Mainpage = ({buyAsset}) => {
     return (
         <div>
-            This is the main page.
-            <Item />
+            <Item buyAsset={buyAsset}/>
         </div>
     )
 }

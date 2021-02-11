@@ -6,7 +6,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 // import Random from "./random";
-import Details from "./name";
+// import Details from "./name";
 import Uploadphoto from "./uploadphoto";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function VerticalTabs() {
+export default function VerticalTabs({captureFile,earnings,uploadAsset}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -77,14 +77,15 @@ export default function VerticalTabs() {
         <Tab label="Stats" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Uploadphoto />
+        <Uploadphoto captureFile={captureFile}
+              uploadAsset={uploadAsset} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         My uploads
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Details />
-        Stats
+        {/* <Details /> */}
+        My Earnings: {earnings}
       </TabPanel>
     </div>
   );

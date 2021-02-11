@@ -14,6 +14,7 @@ import BoughtItems from "./boughtItems/boughtItems";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+  // const { children, value, index, account, ...other } = props;
 
   return (
     <div
@@ -52,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavigationTabs() {
+export default function NavigationTabs({account,captureFile,earnings,tokenCount,uploadAsset,buyAsset}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -72,13 +73,18 @@ export default function NavigationTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Mainpage />
+        <Mainpage buyAsset={buyAsset}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Tokenplace />
+        {/* <Tokenplace/> */}
+        <Tokenplace account={account}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Creatorpage />
+        <Creatorpage 
+              captureFile={captureFile}
+              uploadAsset={uploadAsset}
+              earnings={earnings}
+              />
       </TabPanel>
       <TabPanel value={value} index={3}>
         <BoughtItems />

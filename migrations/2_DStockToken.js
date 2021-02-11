@@ -8,3 +8,6 @@ module.exports = function(deployer) {
     return deployer.deploy(DStock, DStockToken.address, tokenPrice);
   });
 };
+
+
+// issues while migrating and testing while increasing price count

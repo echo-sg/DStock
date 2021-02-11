@@ -1,10 +1,12 @@
 import React from 'react';
 import Creatordrawer from "./Creatordrawer";
 
-const Creatorpage = () => {
+const Creatorpage = ({captureFile,uploadAsset, earnings}) => {
     return (
         <div>
-            <Creatordrawer />
+            <Creatordrawer captureFile={captureFile}
+              earnings={earnings}
+              uploadAsset={uploadAsset}/>
         </div>
     )
 }
